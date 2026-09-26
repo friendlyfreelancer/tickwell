@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tickwell</string>
+    <string name="tick_header">Tick sound</string>
+    <string name="face_use">Use Tickwell face</string>
+    <string name="face_active">Tickwell is your watch face. Touch and hold it to change the style.</string>
+    <string name="face_manual">To use the watch face, touch and hold your current face, then choose Tickwell.</string>
+    <string name="face_missing">The watch face couldn\'t be installed. Reinstall the app and try again.</string>
+    <string name="ticking">Ticking</string>
+    <string name="volume">Volume %1$d</string>
+    <string name="sync">Sync %1$d ms early</string>
+    <string name="less">Less</string>
+    <string name="more">More</string>
+    <string name="help">Ticks every second while the screen is on. Silent in Do Not Disturb and silent mode. Raise Sync if the sound lags the seconds hand.</string>
+    <string name="tile_label">Tick sound</string>
+    <string name="tile_turn_on">Turn ticking on</string>
+    <string name="tile_turn_off">Turn ticking off</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="turn_off">Turn off</string>
+    <string name="channel_name">Ticking</string>
+    <string name="notification_title">Ticking is on</string>
+    <string name="notification_text">Ticks while the screen is on</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tickwell</string>
+    <string name="style_label">Style</string>
+    <string name="style_heritage">Heritage</string>
+    <string name="style_railroad">Railroad</string>
+    <string name="style_pilot">Pilot</string>
+    <string name="style_dress">Dress</string>
+    <string name="style_quartz">Quartz</string>
+    <string name="style_vintage">Vintage</string>
+    <string name="style_field">Field</string>
+    <string name="style_chrono">Chrono</string>
+    <string name="style_diver">Diver</string>
+    <string name="hands_label">Hands</string>
+    <string name="hands_original">Original</string>
+    <string name="hands_blued">Blued steel</string>
+    <string name="hands_black">Black</string>
+    <string name="hands_silver">Silver</string>
+    <string name="hands_gold">Gold</string>
+    <string name="hands_rose">Rose gold</string>
+</resources>

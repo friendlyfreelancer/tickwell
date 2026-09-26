@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tickwell</string>
+    <string name="tagline">Nine classic analog watch faces for Wear OS, with an optional ticking sound.</string>
+
+    <string name="watch_header">Your watch</string>
+    <string name="watch_checking">Looking for your watch…</string>
+    <string name="watch_none">No Wear OS watch is connected. Pair one with this phone, then come back.</string>
+    <string name="watch_missing">Tickwell isn\'t on your watch yet.</string>
+    <string name="watch_ready">Tickwell is installed on your watch.</string>
+    <string name="install_on_watch">Install on watch</string>
+    <string name="open_on_watch">Open on watch</string>
+    <string name="check_watch">Check your watch.</string>
+    <string name="choose_watch">In Play Store, choose your watch in the install options.</string>
+    <string name="no_play_store">Couldn\'t open Play Store on this phone.</string>
+    <string name="send_failed">Couldn\'t reach your watch. Make sure it\'s connected and try again.</string>
+    <string name="refresh">Check again</string>
+    <string name="requirement">Needs a watch running Wear OS 6 or newer.</string>
+
+    <string name="styles_header">Styles</string>
+    <string name="setup_header">Setting it up</string>
+    <string name="setup_1">1. Install Tickwell on your watch.</string>
+    <string name="setup_2">2. Open Tickwell on the watch and tap Use Tickwell face. You can also touch and hold your watch face and pick it from the list.</string>
+    <string name="setup_3">3. To change the style or hand colour, touch and hold the face, then tap Customize.</string>
+    <string name="tick_header">Tick sound</string>
+    <string name="tick_body">The watch app can play a soft tick-tock every second while the screen is on, in step with the seconds hand. It works with any watch face and stays silent in Do Not Disturb. Turn it on in the app on your watch, or add the Tick sound Tile.</string>
+
+    <string name="style_heritage">Heritage</string>
+    <string name="style_railroad">Railroad</string>
+    <string name="style_pilot">Pilot</string>
+    <string name="style_dress">Dress</string>
+    <string name="style_quartz">Quartz</string>
+    <string name="style_vintage">Vintage</string>
+    <string name="style_field">Field</string>
+    <string name="style_chrono">Chrono</string>
+    <string name="style_diver">Diver</string>
+</resources>
