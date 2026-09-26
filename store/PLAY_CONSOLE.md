@@ -81,8 +81,8 @@ Made by Friendly Freelancer. Feedback welcome at friendlyfreelancer.dev@gmail.co
 **Category:** Personalization
 **Tags:** Watch faces, Personalization
 **Contact email:** friendlyfreelancer.dev@gmail.com
-**Website:** leave blank (optional)
-**Privacy policy URL:** the public link to PRIVACY_POLICY (see "Privacy policy link" below)
+**Website:** https://friendlyfreelancer.github.io/tickwell/
+**Privacy policy URL:** https://friendlyfreelancer.github.io/tickwell/privacy/
 
 **Graphics (in `2 - Store graphics`):**
 - App icon: `icon-512.png`
@@ -93,15 +93,14 @@ Made by Friendly Freelancer. Feedback welcome at friendlyfreelancer.dev@gmail.co
   top of the screen with "Your watch", and the styles gallery).
 
 ## Privacy policy link
-Play needs a public web link. The easiest free way:
-1. Open Google Docs → new document → paste the text of `PRIVACY_POLICY.md`.
-2. **File → Share → Publish to web → Publish.** Copy the link it gives you.
-3. Paste that link into the Privacy policy field.
+**https://friendlyfreelancer.github.io/tickwell/privacy/**, served by GitHub Pages from the
+`docs/` folder of https://github.com/friendlyfreelancer/tickwell. Open it once in a browser to
+confirm it loads before pasting it into Play.
 
 ---
 
 ## 4. App content (Policy → App content)
-**Privacy policy:** paste the link.
+**Privacy policy:** https://friendlyfreelancer.github.io/tickwell/privacy/
 
 **Ads:** No, my app does not contain ads.
 
