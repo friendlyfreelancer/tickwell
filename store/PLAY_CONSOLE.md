@@ -17,7 +17,7 @@ Both are signed with the Friendly Freelancer upload key. Keep that key private (
 1. Sign up at **https://play.google.com/console/signup** with friendlyfreelancer.dev@gmail.com.
    - Account type: **Personal**.
    - Developer name (shown on Play): **Friendly Freelancer**.
-   - Contact email: friendlyfreelancer.dev@gmail.com.
+   - Contact email: support@friendlyfreelancer.com.
 2. Pay the **one-time US$25 registration fee** by card on the signup page. This creates your
    Google payments profile.
 3. Verify your identity when asked. Google checks your legal name and ID privately; for a
@@ -76,11 +76,11 @@ No internet access, no ads, no accounts and no analytics. Tickwell collects noth
 
 Requires a watch running Wear OS 6 or newer.
 
-Made by Friendly Freelancer. Feedback welcome at friendlyfreelancer.dev@gmail.com.
+Made by Friendly Freelancer. Feedback welcome at support@friendlyfreelancer.com.
 
 **Category:** Personalization
 **Tags:** Watch faces, Personalization
-**Contact email:** friendlyfreelancer.dev@gmail.com
+**Contact email:** support@friendlyfreelancer.com
 **Website:** https://friendlyfreelancer.github.io/tickwell/
 **Privacy policy URL:** https://friendlyfreelancer.github.io/tickwell/privacy/
 
