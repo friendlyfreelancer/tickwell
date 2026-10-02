@@ -18,4 +18,7 @@
     <string name="hands_silver">Silver</string>
     <string name="hands_gold">Gold</string>
     <string name="hands_rose">Rose gold</string>
+    <string name="aod_label">Always-on</string>
+    <string name="aod_full">Full colour</string>
+    <string name="aod_minimal">Minimal</string>
 </resources>

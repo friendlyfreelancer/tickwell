@@ -836,8 +836,20 @@ def argb(c):
 
 # ---------------------------------------------------------------- ambient
 
+# Always-on mode is a top-level editor setting (not nested in the style list,
+# which crashes Samsung's editor). Both options hide the second hand.
+#  - Full colour: the same face under this black layer. One layer on top dims
+#    every colour evenly; lowering each part's alpha instead would let the dial
+#    show through the hands.
+#  - Minimal: an opaque black face with grey indices and slim light hands. Few
+#    lit pixels, which is easier on the battery and the screen, and what Play's
+#    quality guidelines prefer.
+AMBIENT_DIM = "#66000000"   # 40% black
+AOD_OPTIONS = ["full", "minimal"]   # list position = option id; 0 is the default
+
+
 def ambient():
-    """Always-on mode: black, sparse grey indices, slim light hands."""
+    """Minimal always-on face: black, sparse grey indices, slim light hands."""
     img = canvas((0, 0, 0, 255))
     d = ImageDraw.Draw(img)
     grey = (150, 150, 150, 255)
@@ -943,6 +955,7 @@ def style_scene(idx, style):
                       (tinted(min_base, tint), ma, None), (min_over, ma, None),
                       (second, sa, style["small_seconds"][:2] if "small_seconds" in style else None)]
     preview = render_preview(dial, preview_hands)
+    no_seconds = render_preview(dial, preview_hands[:-1])   # seconds hand is last
     save(preview.resize((180, 180), Image.LANCZOS), f"icon_{key}")
 
     hb = hand_asset(f"hand_{key}_hour", hour_base)
@@ -954,7 +967,6 @@ def style_scene(idx, style):
 
     xml = f"""<ListOption id="{idx}">
   <Group name="{key}" x="0" y="0" width="{SIZE}" height="{SIZE}">
-    <Variant mode="AMBIENT" target="alpha" value="0"/>
     <PartImage x="0" y="0" width="{SIZE}" height="{SIZE}">
       <Image resource="dial_{key}"/>
     </PartImage>{indent(extras, 4)}
@@ -966,12 +978,15 @@ def style_scene(idx, style):
       {xml_hand("HourHand", ho)}
       {xml_hand("MinuteHand", mo)}
     </AnalogClock>
-    <AnalogClock x="{bx}" y="{by}" width="{bsize}" height="{bsize}">
-      {xml_hand("SecondHand", s, SECONDS_MOTION)}
-    </AnalogClock>
+    <Group name="{key}_seconds" x="0" y="0" width="{SIZE}" height="{SIZE}">
+      <Variant mode="AMBIENT" target="alpha" value="0"/>
+      <AnalogClock x="{bx}" y="{by}" width="{bsize}" height="{bsize}">
+        {xml_hand("SecondHand", s, SECONDS_MOTION)}
+      </AnalogClock>
+    </Group>
   </Group>
 </ListOption>"""
-    return xml, preview
+    return xml, preview, no_seconds
 
 
 def main():
@@ -981,15 +996,16 @@ def main():
             os.remove(os.path.join(DRAWABLE, f))
 
     style_options, scenes = [], []
-    first_preview = None
+    first_preview = first_no_seconds = None
     for idx, style in enumerate(STYLES):
-        xml, preview = style_scene(idx, style)
+        xml, preview, no_seconds = style_scene(idx, style)
         scenes.append(xml)
         gallery = os.path.join(PHONE_RES, "drawable-nodpi")
         os.makedirs(gallery, exist_ok=True)
         preview.resize((360, 360), Image.LANCZOS).save(
             os.path.join(gallery, f"gallery_{style['key']}.png"), optimize=True)
         first_preview = first_preview or preview
+        first_no_seconds = first_no_seconds or no_seconds
         key = style["key"]
         style_options.append(
             f'<ListOption id="{idx}" displayName="style_{key}" '
@@ -1004,10 +1020,21 @@ def main():
             f'<ColorOption id="{cid}" displayName="hands_{color}" '
             f'screenReaderText="hands_{color}" colors="{" ".join(argb(t) for t in tints)}"/>')
 
+    # Always-on: minimal face assets, plus an editor icon for each option.
     amb_dial, amb_hour, amb_min = ambient()
     save(circle_mask(downsample(amb_dial)), "dial_ambient")
     ah = hand_asset("hand_ambient_hour", amb_hour)
     am = hand_asset("hand_ambient_minute", amb_min)
+    ha, ma, _ = angles(*PREVIEW_TIME)
+    minimal_icon = render_preview(amb_dial, [(amb_hour, ha, None), (amb_min, ma, None)])
+    dim = Image.new("RGBA", first_no_seconds.size, (0, 0, 0, int(AMBIENT_DIM[1:3], 16)))
+    full_icon = Image.alpha_composite(first_no_seconds.convert("RGBA"), dim)
+    for name, icon in (("full", full_icon), ("minimal", minimal_icon)):
+        save(icon.resize((180, 180), Image.LANCZOS), f"icon_aod_{name}")
+    aod_options = [
+        f'<ListOption id="{i}" displayName="aod_{name}" '
+        f'screenReaderText="aod_{name}" icon="icon_aod_{name}"/>'
+        for i, name in enumerate(AOD_OPTIONS)]
 
     save(first_preview, "preview")
     for density, px in [("mdpi", 48), ("hdpi", 72), ("xhdpi", 96),
@@ -1031,22 +1058,45 @@ def main():
     <ColorConfiguration id="hands" displayName="hands_label" screenReaderText="hands_label" defaultValue="0">
 {indent(chr(10).join(color_options), 6)}
     </ColorConfiguration>
+    <ListConfiguration id="aod" displayName="aod_label" screenReaderText="aod_label" defaultValue="0">
+{indent(chr(10).join(aod_options), 6)}
+    </ListConfiguration>
   </UserConfigurations>
   <Scene backgroundColor="#FF000000">
     <!-- Keep configurations un-nested: Samsung's editor crashes on nesting. -->
     <ListConfiguration id="style">
 {indent(chr(10).join(scenes), 6)}
     </ListConfiguration>
-    <Group name="ambient" x="0" y="0" width="{SIZE}" height="{SIZE}" alpha="0">
-      <Variant mode="AMBIENT" target="alpha" value="255"/>
-      <PartImage x="0" y="0" width="{SIZE}" height="{SIZE}">
-        <Image resource="dial_ambient"/>
-      </PartImage>
-      <AnalogClock x="0" y="0" width="{SIZE}" height="{SIZE}">
-        {xml_hand("HourHand", ah)}
-        {xml_hand("MinuteHand", am)}
-      </AnalogClock>
-    </Group>
+    <ListConfiguration id="aod">
+      <ListOption id="{AOD_OPTIONS.index("full")}">
+        <Group name="ambient_dim" x="0" y="0" width="{SIZE}" height="{SIZE}" alpha="0">
+          <Variant mode="AMBIENT" target="alpha" value="255"/>
+          <PartDraw x="0" y="0" width="{SIZE}" height="{SIZE}">
+            <Rectangle x="0" y="0" width="{SIZE}" height="{SIZE}">
+              <Fill color="{AMBIENT_DIM}"/>
+            </Rectangle>
+          </PartDraw>
+        </Group>
+      </ListOption>
+      <ListOption id="{AOD_OPTIONS.index("minimal")}">
+        <!-- Opaque, so it fully covers the styled face underneath. -->
+        <Group name="ambient_minimal" x="0" y="0" width="{SIZE}" height="{SIZE}" alpha="0">
+          <Variant mode="AMBIENT" target="alpha" value="255"/>
+          <PartDraw x="0" y="0" width="{SIZE}" height="{SIZE}">
+            <Rectangle x="0" y="0" width="{SIZE}" height="{SIZE}">
+              <Fill color="#FF000000"/>
+            </Rectangle>
+          </PartDraw>
+          <PartImage x="0" y="0" width="{SIZE}" height="{SIZE}">
+            <Image resource="dial_ambient"/>
+          </PartImage>
+          <AnalogClock x="0" y="0" width="{SIZE}" height="{SIZE}">
+            {xml_hand("HourHand", ah)}
+            {xml_hand("MinuteHand", am)}
+          </AnalogClock>
+        </Group>
+      </ListOption>
+    </ListConfiguration>
   </Scene>
 </WatchFace>
 """

@@ -23,13 +23,16 @@
       <ColorOption id="4" displayName="hands_gold" screenReaderText="hands_gold" colors="#FFC9A24D #FFC9A24D #FFC9A24D #FFC9A24D #FFC9A24D"/>
       <ColorOption id="5" displayName="hands_rose" screenReaderText="hands_rose" colors="#FFC0806C #FFC0806C #FFC0806C #FFC0806C #FFC0806C"/>
     </ColorConfiguration>
+    <ListConfiguration id="aod" displayName="aod_label" screenReaderText="aod_label" defaultValue="0">
+      <ListOption id="0" displayName="aod_full" screenReaderText="aod_full" icon="icon_aod_full"/>
+      <ListOption id="1" displayName="aod_minimal" screenReaderText="aod_minimal" icon="icon_aod_minimal"/>
+    </ListConfiguration>
   </UserConfigurations>
   <Scene backgroundColor="#FF000000">
     <!-- Keep configurations un-nested: Samsung's editor crashes on nesting. -->
     <ListConfiguration id="style">
       <ListOption id="0">
         <Group name="heritage" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_heritage"/>
           </PartImage>
@@ -41,14 +44,16 @@
             <HourHand resource="hand_heritage_hour_shade" x="209" y="115" width="32" height="125" pivotX="0.5" pivotY="0.88"/>
             <MinuteHand resource="hand_heritage_minute_shade" x="213" y="34" width="24" height="208" pivotX="0.5" pivotY="0.9183"/>
           </AnalogClock>
-          <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_heritage_second" x="215" y="22" width="20" height="254" pivotX="0.5" pivotY="0.7992"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="heritage_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_heritage_second" x="215" y="22" width="20" height="254" pivotX="0.5" pivotY="0.7992"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="1">
         <Group name="railroad" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_railroad"/>
           </PartImage>
@@ -60,14 +65,16 @@
             <HourHand resource="hand_railroad_hour_shade" x="205" y="103" width="40" height="144" pivotX="0.5" pivotY="0.8472"/>
             <MinuteHand resource="hand_railroad_minute_shade" x="211" y="30" width="28" height="225" pivotX="0.5" pivotY="0.8667"/>
           </AnalogClock>
-          <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_railroad_second" x="215" y="19" width="20" height="262" pivotX="0.5" pivotY="0.7863"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="railroad_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_railroad_second" x="215" y="19" width="20" height="262" pivotX="0.5" pivotY="0.7863"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="2">
         <Group name="pilot" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_pilot"/>
           </PartImage>
@@ -79,14 +86,16 @@
             <HourHand resource="hand_pilot_hour_shade" x="209" y="103" width="32" height="144" pivotX="0.5" pivotY="0.8472"/>
             <MinuteHand resource="hand_pilot_minute_shade" x="211" y="33" width="28" height="219" pivotX="0.5" pivotY="0.8767"/>
           </AnalogClock>
-          <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_pilot_second" x="217" y="22" width="16" height="256" pivotX="0.5" pivotY="0.793"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="pilot_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_pilot_second" x="217" y="22" width="16" height="256" pivotX="0.5" pivotY="0.793"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="3">
         <Group name="dress" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_dress"/>
           </PartImage>
@@ -105,14 +114,16 @@
             <HourHand resource="hand_dress_hour_shade" x="211" y="105" width="28" height="137" pivotX="0.5" pivotY="0.8759"/>
             <MinuteHand resource="hand_dress_minute_shade" x="213" y="30" width="24" height="215" pivotX="0.5" pivotY="0.907"/>
           </AnalogClock>
-          <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_dress_second" x="217" y="17" width="16" height="254" pivotX="0.5" pivotY="0.8189"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="dress_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_dress_second" x="217" y="17" width="16" height="254" pivotX="0.5" pivotY="0.8189"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="4">
         <Group name="quartz" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_quartz"/>
           </PartImage>
@@ -124,14 +135,16 @@
             <HourHand resource="hand_quartz_hour_shade" x="215" y="110" width="20" height="135" pivotX="0.5" pivotY="0.8519"/>
             <MinuteHand resource="hand_quartz_minute_shade" x="213" y="28" width="24" height="222" pivotX="0.5" pivotY="0.8874"/>
           </AnalogClock>
-          <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_quartz_second" x="217" y="22" width="16" height="251" pivotX="0.5" pivotY="0.8088"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="quartz_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_quartz_second" x="217" y="22" width="16" height="251" pivotX="0.5" pivotY="0.8088"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="5">
         <Group name="vintage" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_vintage"/>
           </PartImage>
@@ -143,14 +156,16 @@
             <HourHand resource="hand_vintage_hour_shade" x="213" y="115" width="24" height="126" pivotX="0.5" pivotY="0.873"/>
             <MinuteHand resource="hand_vintage_minute_shade" x="213" y="35" width="24" height="209" pivotX="0.5" pivotY="0.9091"/>
           </AnalogClock>
-          <AnalogClock x="178" y="275" width="94" height="94">
-            <SecondHand resource="hand_vintage_second" x="39" y="2" width="16" height="57" pivotX="0.5" pivotY="0.7895"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="vintage_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="178" y="275" width="94" height="94">
+              <SecondHand resource="hand_vintage_second" x="39" y="2" width="16" height="57" pivotX="0.5" pivotY="0.7895"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="6">
         <Group name="field" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_field"/>
           </PartImage>
@@ -169,14 +184,16 @@
             <HourHand resource="hand_field_hour_shade" x="215" y="110" width="20" height="135" pivotX="0.5" pivotY="0.8519"/>
             <MinuteHand resource="hand_field_minute_shade" x="213" y="28" width="24" height="222" pivotX="0.5" pivotY="0.8874"/>
           </AnalogClock>
-          <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_field_second" x="217" y="22" width="16" height="254" pivotX="0.5" pivotY="0.7992"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="field_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_field_second" x="217" y="22" width="16" height="254" pivotX="0.5" pivotY="0.7992"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="7">
         <Group name="chrono" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_chrono"/>
           </PartImage>
@@ -196,14 +213,16 @@
             <HourHand resource="hand_chrono_hour_shade" x="213" y="108" width="24" height="137" pivotX="0.5" pivotY="0.854"/>
             <MinuteHand resource="hand_chrono_minute_shade" x="213" y="25" width="24" height="225" pivotX="0.5" pivotY="0.8889"/>
           </AnalogClock>
-          <AnalogClock x="76" y="176" width="99" height="99">
-            <SecondHand resource="hand_chrono_second" x="41" y="3" width="16" height="58" pivotX="0.5" pivotY="0.7931"><Tick duration="0.1" strength="1.0"/></SecondHand>
-          </AnalogClock>
+          <Group name="chrono_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="76" y="176" width="99" height="99">
+              <SecondHand resource="hand_chrono_second" x="41" y="3" width="16" height="58" pivotX="0.5" pivotY="0.7931"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
         </Group>
       </ListOption>
       <ListOption id="8">
         <Group name="diver" x="0" y="0" width="450" height="450">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
           <PartImage x="0" y="0" width="450" height="450">
             <Image resource="dial_diver"/>
           </PartImage>
@@ -222,21 +241,44 @@
             <HourHand resource="hand_diver_hour_shade" x="209" y="103" width="32" height="144" pivotX="0.5" pivotY="0.8472"/>
             <MinuteHand resource="hand_diver_minute_shade" x="211" y="30" width="28" height="222" pivotX="0.5" pivotY="0.8784"/>
           </AnalogClock>
+          <Group name="diver_seconds" x="0" y="0" width="450" height="450">
+            <Variant mode="AMBIENT" target="alpha" value="0"/>
+            <AnalogClock x="0" y="0" width="450" height="450">
+              <SecondHand resource="hand_diver_second" x="215" y="27" width="20" height="251" pivotX="0.5" pivotY="0.7888"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            </AnalogClock>
+          </Group>
+        </Group>
+      </ListOption>
+    </ListConfiguration>
+    <ListConfiguration id="aod">
+      <ListOption id="0">
+        <Group name="ambient_dim" x="0" y="0" width="450" height="450" alpha="0">
+          <Variant mode="AMBIENT" target="alpha" value="255"/>
+          <PartDraw x="0" y="0" width="450" height="450">
+            <Rectangle x="0" y="0" width="450" height="450">
+              <Fill color="#66000000"/>
+            </Rectangle>
+          </PartDraw>
+        </Group>
+      </ListOption>
+      <ListOption id="1">
+        <!-- Opaque, so it fully covers the styled face underneath. -->
+        <Group name="ambient_minimal" x="0" y="0" width="450" height="450" alpha="0">
+          <Variant mode="AMBIENT" target="alpha" value="255"/>
+          <PartDraw x="0" y="0" width="450" height="450">
+            <Rectangle x="0" y="0" width="450" height="450">
+              <Fill color="#FF000000"/>
+            </Rectangle>
+          </PartDraw>
+          <PartImage x="0" y="0" width="450" height="450">
+            <Image resource="dial_ambient"/>
+          </PartImage>
           <AnalogClock x="0" y="0" width="450" height="450">
-            <SecondHand resource="hand_diver_second" x="215" y="27" width="20" height="251" pivotX="0.5" pivotY="0.7888"><Tick duration="0.1" strength="1.0"/></SecondHand>
+            <HourHand resource="hand_ambient_hour" x="217" y="109" width="16" height="129" pivotX="0.5" pivotY="0.8992"/>
+            <MinuteHand resource="hand_ambient_minute" x="217" y="37" width="16" height="204" pivotX="0.5" pivotY="0.9216"/>
           </AnalogClock>
         </Group>
       </ListOption>
     </ListConfiguration>
-    <Group name="ambient" x="0" y="0" width="450" height="450" alpha="0">
-      <Variant mode="AMBIENT" target="alpha" value="255"/>
-      <PartImage x="0" y="0" width="450" height="450">
-        <Image resource="dial_ambient"/>
-      </PartImage>
-      <AnalogClock x="0" y="0" width="450" height="450">
-        <HourHand resource="hand_ambient_hour" x="217" y="109" width="16" height="129" pivotX="0.5" pivotY="0.8992"/>
-        <MinuteHand resource="hand_ambient_minute" x="217" y="37" width="16" height="204" pivotX="0.5" pivotY="0.9216"/>
-      </AnalogClock>
-    </Group>
   </Scene>
 </WatchFace>
