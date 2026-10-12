@@ -30,7 +30,7 @@ Long-press the face → Customize:
   - Chrono has working sub-dials: running seconds, a 24-hour hand and a battery gauge.
 - **Hands:** Original, Blued steel, Black, Silver, Gold, Rose gold.
 
-Every dial carries the "AJAR" mark; the name appears nowhere else. The seconds hand always ticks,
+Every dial carries the "SUVEL" mark (`BRAND_MARK` in `tools/generate_assets.py`); the name appears nowhere else. The seconds hand always ticks,
 so it lines up with the tick sound. Always-on mode switches to a minimal black dial.
 
 Keep configurations un-nested in the XML. Samsung's watch face editor crashes

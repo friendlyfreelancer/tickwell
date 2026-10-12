@@ -19,7 +19,7 @@ def face(style, masked=True):
     if not masked:
         g.circle_mask = lambda img: img   # Play applies its own mask to Wear shots.
     try:
-        _, preview = g.style_scene(g.STYLES.index(style), style)
+        _, preview, _ = g.style_scene(g.STYLES.index(style), style)
     finally:
         g.circle_mask = mask
     return preview

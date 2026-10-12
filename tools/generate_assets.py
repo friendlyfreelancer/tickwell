@@ -16,6 +16,7 @@ DRAWABLE = os.path.join(RES, "drawable-nodpi")
 # The phone companion shows the same previews and icon.
 PHONE_RES = os.path.join(ROOT, "phone", "src", "main", "res")
 
+BRAND_MARK = "SUVEL"  # The only place the brand appears: a small mark on every dial.
 SIZE = 450          # Watch face canvas (px).
 SS = 4              # Supersampling factor.
 S = SIZE * SS
@@ -271,7 +272,7 @@ def heritage_dial():
         text_at(img, n, font, x, y, INK, angle=i * 30)
     ring(d, 560, 3, (60, 55, 50, 160))
     script = ImageFont.truetype(FONTS["serif_italic"], 70)
-    text_at(img, "AJAR", script, C, C - 300, (60, 55, 50, 255))
+    text_at(img, BRAND_MARK, script, C, C - 300, (60, 55, 50, 255))
     return img
 
 
@@ -300,7 +301,7 @@ def railroad_dial():
         x, y = polar(640, i * 30)
         text_at(img, str(12 if i == 0 else i), font, x, y, INK)
     small = ImageFont.truetype(FONTS["sans_semibold"], 52)
-    text_at(img, "AJAR", small, C, C + 290, (90, 90, 90, 255))
+    text_at(img, BRAND_MARK, small, C, C + 290, (90, 90, 90, 255))
     return img
 
 
@@ -340,7 +341,7 @@ def pilot_dial():
         x, y = polar(655, i * 30)
         text_at(img, str(i), font, x, y, WHITE)
     small = ImageFont.truetype(FONTS["sans_semibold"], 46)
-    text_at(img, "AJAR", small, C, C - 300, (220, 220, 220, 255))
+    text_at(img, BRAND_MARK, small, C, C - 300, (220, 220, 220, 255))
     return img
 
 
@@ -397,7 +398,7 @@ def dress_dial():
     d.rounded_rectangle([x0 - 8, y0 - 8, x1 + 8, y1 + 8], 18, fill=SILVER_DARK)
     d.rounded_rectangle([x0, y0, x1, y1], 12, fill=(250, 250, 248, 255))
     script = ImageFont.truetype(FONTS["serif_italic"], 66)
-    text_at(img, "AJAR", script, C, C - 330, (220, 222, 230, 255))
+    text_at(img, BRAND_MARK, script, C, C - 330, (220, 222, 230, 255))
     return img
 
 
@@ -437,7 +438,7 @@ def quartz_dial():
         x, y = polar(690, i * 30)
         text_at(img, n, font, x, y, INK)
     small = ImageFont.truetype(FONTS["sans_semibold"], 40)
-    text_at(img, "AJAR", small, C, C + 270, (110, 110, 110, 255))
+    text_at(img, BRAND_MARK, small, C, C + 270, (110, 110, 110, 255))
     return img
 
 
@@ -497,7 +498,7 @@ def vintage_dial():
                 (cx + (r - 4) * math.sin(a), cy - (r - 4) * math.cos(a))],
                fill=track, width=5 if s % 5 == 0 else 3)
     script = ImageFont.truetype(FONTS["serif_italic"], 62)
-    text_at(img, "AJAR", script, C, C - 330, (110, 86, 44, 255))
+    text_at(img, BRAND_MARK, script, C, C - 330, (110, 86, 44, 255))
     return img
 
 
@@ -537,7 +538,7 @@ def field_dial():
     d.rounded_rectangle([x0 - 6, y0 - 6, x1 + 6, y1 + 6], 10, fill=(160, 162, 168, 255))
     d.rounded_rectangle([x0, y0, x1, y1], 6, fill=(252, 252, 252, 255))
     small = ImageFont.truetype(FONTS["sans_semibold"], 46)
-    text_at(img, "AJAR", small, C, C - 300, (90, 90, 90, 255))
+    text_at(img, BRAND_MARK, small, C, C - 300, (90, 90, 90, 255))
     return img
 
 
@@ -622,7 +623,7 @@ def chrono_dial():
                    [(-half + p * BATTERY_SWEEP / 10, p % 5 == 0) for p in range(11)],
                    arc=(-half, -half + BATTERY_SWEEP * 0.2, RED))
     small = ImageFont.truetype(FONTS["sans_semibold"], 44)
-    text_at(img, "AJAR", small, C, C - 280, (200, 200, 200, 255))
+    text_at(img, BRAND_MARK, small, C, C - 280, (200, 200, 200, 255))
     return img
 
 
@@ -694,7 +695,7 @@ def diver_dial():
     d.rounded_rectangle([x0 - 8, y0 - 8, x1 + 8, y1 + 8], 14, fill=frame)
     d.rounded_rectangle([x0, y0, x1, y1], 10, fill=(250, 250, 248, 255))
     small = ImageFont.truetype(FONTS["sans_semibold"], 46)
-    text_at(img, "AJAR", small, C, C - 300, (225, 225, 225, 255))
+    text_at(img, BRAND_MARK, small, C, C - 300, (225, 225, 225, 255))
     text_at(img, "200 m", small, C, C + 300, (196, 22, 42, 255))
     return img
 
