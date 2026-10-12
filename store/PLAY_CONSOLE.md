@@ -1,11 +1,11 @@
 # Tickwell: everything to paste into Google Play Console
 
 Package name: `com.friendlyfreelancer.classicfaces` (permanent, can never change)
-Version: 1.0.0. Phone app version code 1, watch app version code 1001.
+Version: 1.1.0. Phone app version code 4, watch app version code 1004.
 
 Upload files (in the `1 - Upload these` folder):
-- `tickwell-wear-1.0.0.aab`: the watch app (with the watch face inside). Goes to a **Wear OS** track.
-- `tickwell-phone-1.0.0.aab`: the phone companion. Goes to the normal (phone) track.
+- `tickwell-wear-1.1.0.aab`: the watch app (with the watch face inside). Goes to a **Wear OS** track.
+- `tickwell-phone-1.1.0.aab`: the phone companion. Goes to the normal (phone) track.
 
 Both are signed with the Friendly Freelancer upload key. Keep that key private (see the separate
 "Tickwell Signing Key - PRIVATE" folder).
@@ -142,9 +142,9 @@ New personal accounts need a **closed test with at least 12 testers opted in for
 row** before applying for production. Phone users count, which is why the phone app exists.
 
 1. **Testing → Closed testing → Create track** (the phone track). Upload
-   `tickwell-phone-1.0.0.aab`.
+   `tickwell-phone-1.1.0.aab`.
 2. **Testing → Closed testing → Wear OS only closed testing** (appears after step 2). Upload
-   `tickwell-wear-1.0.0.aab`.
+   `tickwell-wear-1.1.0.aab`.
 3. Add the **same tester email list** (12+ Google accounts) to both tracks. Save, then send both
    releases for review.
 4. Share the opt-in link from the Testers tab. Each tester opens it on their phone, taps
