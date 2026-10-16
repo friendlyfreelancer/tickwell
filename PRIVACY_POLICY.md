@@ -1,7 +1,7 @@
 # Tickwell Privacy Policy
 
 **Effective date:** September 26, 2026
-**Publisher:** Friendly Freelancer
+**Publisher:** Suvel Webverse
 **Contact:** support@suvelwebverse.com
 
 Tickwell is a free set of classic analog watch faces for Wear OS, with an optional ticking sound

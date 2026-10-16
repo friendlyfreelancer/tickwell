@@ -1,7 +1,7 @@
 # Tickwell
 
 One Google Play listing, "Tickwell: Classic Watch Faces" (`com.friendlyfreelancer.classicfaces`,
-published by Friendly Freelancer),
+published by Suvel Webverse),
 made of three modules:
 
 - **`wear`**: the watch app. It plays a mechanical tick-tock each second while the screen is on,

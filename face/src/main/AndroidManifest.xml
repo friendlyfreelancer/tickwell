@@ -18,6 +18,6 @@
             android:value="1" />
         <property
             android:name="com.google.wear.watchface.format.publisher"
-            android:value="Friendly Freelancer" />
+            android:value="Suvel Webverse" />
     </application>
 </manifest>
