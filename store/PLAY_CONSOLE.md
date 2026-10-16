@@ -1,34 +1,43 @@
 # Tickwell: everything to paste into Google Play Console
 
-Package name: `com.friendlyfreelancer.classicfaces` (permanent, can never change)
+Package name: `com.suvelwebverse.tickwell` (permanent, can never change)
 Version: 1.1.0. Phone app version code 4, watch app version code 1004.
 
 Upload files (in the `1 - Upload these` folder):
 - `tickwell-wear-1.1.0.aab`: the watch app (with the watch face inside). Goes to a **Wear OS** track.
 - `tickwell-phone-1.1.0.aab`: the phone companion. Goes to the normal (phone) track.
 
-Both are signed with the Friendly Freelancer upload key. Keep that key private (see the separate
+Both are signed with the Tickwell upload key. Keep that key private (see the separate
 "Tickwell Signing Key - PRIVATE" folder).
 
 ---
 
 ## 0. Developer account and payment (one time)
 
-1. Sign up at **https://play.google.com/console/signup** with friendlyfreelancer.dev@gmail.com.
-   - Account type: **Personal**.
+Tickwell is published by the Indian LLP as an **organization** account, developer name
+**Suvel Webverse**.
+
+Before you start, have ready:
+- **D-U-N-S number** for the LLP. Google requires it for organization accounts. It's free from
+  Dun & Bradstreet India (https://www.dnb.co.in), and can take one to two weeks, so apply
+  first. The LLP name and address on it must match the LLP's registration exactly.
+- The LLP's registered name and address exactly as on its certificate of incorporation.
+- A Google account for the LLP to own the Play account (suvelwebverse@gmail.com).
+
+1. Sign up at **https://play.google.com/console/signup** with suvelwebverse@gmail.com.
+   - Account type: **Organization**.
+   - Organization name, address and D-U-N-S: exactly as registered.
    - Developer name (shown on Play): **Suvel Webverse**.
-   - Contact email: support@suvelwebverse.com.
-2. Pay the **one-time US$25 registration fee** by card on the signup page. This creates your
-   Google payments profile.
-3. Verify your identity when asked. Google checks your legal name and ID privately; for a
-   personal account with only free apps, Play shows the developer name, not your legal name.
+   - Website: **https://suvelwebverse.in**. Google asks you to verify it in Search Console;
+     suvelwebverse.in already has a Search Console verification record, so sign in to Search
+     Console with the same Google account (or add that account as an owner there).
+   - Contact email: support@suvelwebverse.com. Contact phone: the LLP's number.
+2. Pay the **one-time US$25 registration fee**. This creates the LLP's Google payments profile.
+3. Complete Google's organization verification when asked (it checks the D-U-N-S details).
 4. Verify the contact email and phone number.
 
 Tickwell is free with no in-app purchases, so you do **not** need a merchant account or payout
 setup.
-
-If your existing Play Console account (Hingo) is already set up, don't create a new one. Change
-the developer name in **Settings → Developer account → Account details** instead.
 
 ---
 
@@ -81,8 +90,8 @@ Made by Suvel Webverse. Feedback welcome at support@suvelwebverse.com.
 **Category:** Personalization
 **Tags:** Watch faces, Personalization
 **Contact email:** support@suvelwebverse.com
-**Website:** https://friendlyfreelancer.github.io/tickwell/
-**Privacy policy URL:** https://friendlyfreelancer.github.io/tickwell/privacy/
+**Website:** https://suvelwebverse.com/support#tickwell
+**Privacy policy URL:** https://suvelwebverse.com/privacy#tickwell
 
 **Graphics (in `2 - Store graphics`):**
 - App icon: `icon-512.png`
@@ -93,14 +102,13 @@ Made by Suvel Webverse. Feedback welcome at support@suvelwebverse.com.
   top of the screen with "Your watch", and the styles gallery).
 
 ## Privacy policy link
-**https://friendlyfreelancer.github.io/tickwell/privacy/**, served by GitHub Pages from the
-`docs/` folder of https://github.com/friendlyfreelancer/tickwell. Open it once in a browser to
-confirm it loads before pasting it into Play.
+**https://suvelwebverse.com/privacy#tickwell** (the Tickwell section of the Suvel Webverse
+privacy policy). Open it once in a browser to confirm it loads before pasting it into Play.
 
 ---
 
 ## 4. App content (Policy → App content)
-**Privacy policy:** https://friendlyfreelancer.github.io/tickwell/privacy/
+**Privacy policy:** https://suvelwebverse.com/privacy#tickwell
 
 **Ads:** No, my app does not contain ads.
 
@@ -137,9 +145,10 @@ question. Result should be Everyone / PEGI 3.
 
 ---
 
-## 5. Closed test (required for new personal accounts)
-New personal accounts need a **closed test with at least 12 testers opted in for 14 days in a
-row** before applying for production. Phone users count, which is why the phone app exists.
+## 5. Closed test (optional for an organization account)
+The "12 testers for 14 days" rule only applies to new **personal** accounts. As an organization
+account you can release straight to production. A short closed test with a few people is still
+a good idea before going public; the steps are below.
 
 1. **Testing → Closed testing → Create track** (the phone track). Upload
    `tickwell-phone-1.1.0.aab`.
@@ -150,9 +159,7 @@ row** before applying for production. Phone users count, which is why the phone 
 4. Share the opt-in link from the Testers tab. Each tester opens it on their phone, taps
    "Become a tester", then installs Tickwell from Play. Testers with a Wear OS 6 watch can
    install it on the watch from the same Play page.
-5. Keep everyone opted in for **14 days in a row**. Anyone who leaves early doesn't count.
-6. After 14 days: **Dashboard → Apply for production**. Describe what testers did and any
-   feedback, then roll out to production.
+6. When you're happy: create the production releases (phone and Wear OS) and roll out.
 
 ## Releasing updates later
 1. In `gradle.properties`, raise `appVersionCode` (2, 3, …) and `appVersionName`.

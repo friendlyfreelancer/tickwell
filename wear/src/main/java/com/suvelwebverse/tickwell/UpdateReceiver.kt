@@ -1,4 +1,4 @@
-package com.friendlyfreelancer.classicfaces
+package com.suvelwebverse.tickwell
 
 import android.content.BroadcastReceiver
 import android.content.Context

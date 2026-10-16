@@ -1,4 +1,4 @@
-package com.friendlyfreelancer.classicfaces
+package com.suvelwebverse.tickwell
 
 import androidx.concurrent.futures.CallbackToFutureAdapter
 import androidx.wear.protolayout.ActionBuilders

@@ -15,12 +15,12 @@ val keystoreProps = Properties().apply {
 }
 
 android {
-    namespace = "com.friendlyfreelancer.classicfaces"
+    namespace = "com.suvelwebverse.tickwell"
     compileSdk = 36
 
     defaultConfig {
         // One Play listing: this watch app and the phone app share the package.
-        applicationId = "com.friendlyfreelancer.classicfaces"
+        applicationId = "com.suvelwebverse.tickwell"
         // Watch Face Push needs Wear OS 6.
         minSdk = 36
         targetSdk = 36

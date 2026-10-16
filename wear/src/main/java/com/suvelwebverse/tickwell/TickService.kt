@@ -1,4 +1,4 @@
-package com.friendlyfreelancer.classicfaces
+package com.suvelwebverse.tickwell
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -197,6 +197,6 @@ class TickService : Service() {
     companion object {
         private const val CHANNEL_ID = "ticking"
         private const val NOTIFICATION_ID = 1
-        private const val ACTION_STOP = "com.friendlyfreelancer.classicfaces.STOP"
+        private const val ACTION_STOP = "com.suvelwebverse.tickwell.STOP"
     }
 }

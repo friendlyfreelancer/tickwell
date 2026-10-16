@@ -13,12 +13,12 @@ val keystoreProps = Properties().apply {
 }
 
 android {
-    namespace = "com.friendlyfreelancer.classicfaces"
+    namespace = "com.suvelwebverse.tickwell"
     compileSdk = 36
 
     defaultConfig {
         // Same package and signing key as the watch app: one Play listing.
-        applicationId = "com.friendlyfreelancer.classicfaces"
+        applicationId = "com.suvelwebverse.tickwell"
         minSdk = 26
         targetSdk = 36
         versionCode = (property("appVersionCode") as String).toInt()

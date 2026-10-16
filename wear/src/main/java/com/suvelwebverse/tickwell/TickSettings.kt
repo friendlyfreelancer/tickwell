@@ -1,4 +1,4 @@
-package com.friendlyfreelancer.classicfaces
+package com.suvelwebverse.tickwell
 
 import android.content.Context
 import android.content.Intent

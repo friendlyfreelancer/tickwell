@@ -1,6 +1,6 @@
 # Tickwell
 
-One Google Play listing, "Tickwell: Classic Watch Faces" (`com.friendlyfreelancer.classicfaces`,
+One Google Play listing, "Tickwell: Classic Watch Faces" (`com.suvelwebverse.tickwell`,
 published by Suvel Webverse),
 made of three modules:
 
@@ -9,7 +9,7 @@ made of three modules:
   [Watch Face Push](https://developer.android.com/training/wearables/watch-face-push) (Wear OS 6+).
 - **`face`**: the watch face, built with [Watch Face Format](https://developer.android.com/training/wearables/wff)
   (declarative XML, no code). It is never uploaded on its own. Its package,
-  `com.friendlyfreelancer.classicfaces.watchfacepush.classic`, follows the naming Watch Face Push
+  `com.suvelwebverse.tickwell.watchfacepush.classic`, follows the naming Watch Face Push
   requires.
 - **`phone`**: the phone companion. It shows the styles, opens the Play listing so the user can
   install on their watch, opens the watch app remotely, and explains setup. Remote opening uses a

@@ -12,13 +12,13 @@ val keystoreProps = Properties().apply {
 }
 
 android {
-    namespace = "com.friendlyfreelancer.classicfaces.watchface"
+    namespace = "com.suvelwebverse.tickwell.watchface"
     compileSdk = 36
 
     defaultConfig {
         // Installed by the wear app through Watch Face Push, which requires
         // "<marketplace package>.watchfacepush.<name>".
-        applicationId = "com.friendlyfreelancer.classicfaces.watchfacepush.classic"
+        applicationId = "com.suvelwebverse.tickwell.watchfacepush.classic"
         // Watch Face Format v1 runs on Wear OS 4 (API 33) and newer.
         minSdk = 33
         targetSdk = 36

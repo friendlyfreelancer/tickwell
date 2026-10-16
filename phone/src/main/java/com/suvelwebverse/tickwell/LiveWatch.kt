@@ -1,4 +1,4 @@
-package com.friendlyfreelancer.classicfaces
+package com.suvelwebverse.tickwell
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.Spring

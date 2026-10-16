@@ -1,4 +1,4 @@
-package com.friendlyfreelancer.classicfaces
+package com.suvelwebverse.tickwell
 
 import android.content.Intent
 import com.google.android.gms.wearable.MessageEvent
