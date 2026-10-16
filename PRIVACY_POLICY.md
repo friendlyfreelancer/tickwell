@@ -2,7 +2,7 @@
 
 **Effective date:** September 26, 2026
 **Publisher:** Friendly Freelancer
-**Contact:** support@friendlyfreelancer.com
+**Contact:** support@suvelwebverse.com
 
 Tickwell is a free set of classic analog watch faces for Wear OS, with an optional ticking sound
 and a companion app for your phone. This policy explains what Tickwell accesses and what it does
@@ -49,4 +49,4 @@ date.
 
 ## Contact
 
-Questions about this policy: support@friendlyfreelancer.com
+Questions about this policy: support@suvelwebverse.com
